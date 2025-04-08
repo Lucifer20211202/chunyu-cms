@@ -50,7 +50,7 @@ import { jwtConstants } from '../modules/system/auth/auth.constants';
             options: {
               socket: {
                 host: configService.get<any>('bullRedis.host'),
-                port: 6379,
+                port: configService.get<any>('bullRedis.port'),
               },
             },
           },

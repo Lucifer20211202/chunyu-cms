@@ -20,6 +20,7 @@ export default () => {
   }
 
   // 返回环境配置
+  console.log(`envConfig`, envConfig);
   return envConfig;
 };
 
@@ -75,7 +76,7 @@ export interface IConfig {
 
   bullRedis?: {
     host: string;
-    port: string;
+    port: string | number;
     password: string;
   };
 

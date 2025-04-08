@@ -19,14 +19,16 @@ export default defineConfig({
   // redis 配置
   redis: {
     config: {
-      url: `redis://${process.env.REDIS_HOST || '127.0.0.1'}:6379/0`,
+      url: `redis://${process.env.REDIS_HOST || '127.0.0.1'}:${
+        process.env.REDIS_PORT || 6379
+      }/0`,
     },
   },
 
-  // 队列reids 配置
+  // 队列redis 配置
   bullRedis: {
     host: process.env.REDIS_HOST || '127.0.0.1',
-    port: '6379',
+    port: process.env.REDIS_PORT || 6379,
     password: '',
   },
 

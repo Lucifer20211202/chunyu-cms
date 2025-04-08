@@ -35,21 +35,6 @@ export class BaseEntity {
   @ApiHideProperty()
   updateTime: Date | string;
 
-  /* 创建人 */
-  @Column({ name: 'create_by', comment: '创建人', length: 30, default: '' })
-  @ApiHideProperty()
-  @Excel({
-    name: '创建人',
-    type: ExcelTypeEnum.EXPORT,
-    sort: 101,
-  })
-  createBy: string;
-
-  /* 更新人 */
-  @Column({ name: 'update_by', comment: '更新人', length: 30, default: '' })
-  @ApiHideProperty()
-  updateBy: string;
-
   /* 备注 */
   @Column({ name: 'remark', comment: '备注', default: '' })
   @IsOptional()
@@ -59,9 +44,4 @@ export class BaseEntity {
     sort: 102,
   })
   remark?: string;
-
-  /* 版本号（首次插入或更新时会自增） */
-  @VersionColumn({ name: 'version', comment: '版本号', select: false })
-  @ApiHideProperty()
-  version?: number;
 }
